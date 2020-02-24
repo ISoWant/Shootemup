@@ -14,10 +14,8 @@ public class PlayerContraller : MonoBehaviour
     [Header("Fire")]
     [Tooltip("Скорость с которой выпускаются пули.")]
     [SerializeField] private int fireSpeed;
-    [Tooltip("Маскимально возможная координата игрока по x.")]
-    [SerializeField] private float max_x;
-    [Tooltip("Маскимально возможная координата игрока по y.")]
-    [SerializeField] private float max_y;
+    private float max_x = 5.2f;
+    private float max_y = 8.7f;
     private Camera cam;
 
     private void Start()
@@ -29,7 +27,6 @@ public class PlayerContraller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         if (Input.GetMouseButton(0))
         {
             Vector3 point = new Vector3();

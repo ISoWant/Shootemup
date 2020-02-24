@@ -5,13 +5,12 @@ using UnityEngine;
 public class cameraLoop : MonoBehaviour
 {
     public GameObject[] levels;
-    private Camera mainCamera;
     private Vector2 screenBounds;
     public float choke;
 
     void Start()
     {
-        mainCamera = gameObject.GetComponent<Camera>();
+        Camera mainCamera = gameObject.GetComponent<Camera>();
         screenBounds = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, mainCamera.transform.position.y));
         foreach(GameObject obj in levels)
         {

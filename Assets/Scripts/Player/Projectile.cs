@@ -3,8 +3,16 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class DestroyOnInvis : MonoBehaviour
+public class Projectile : MonoBehaviour, IProjectile
 {
+    [SerializeField]
+    int damage;
+
+    public int getDamage()
+    {
+        return damage;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +23,11 @@ public class DestroyOnInvis : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
     }
 
     private void OnBecameInvisible()

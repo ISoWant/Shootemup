@@ -14,6 +14,10 @@ public class PlayerContraller : MonoBehaviour
     [Header("Fire")]
     [Tooltip("Скорость с которой выпускаются пули.")]
     [SerializeField] private int fireSpeed;
+    [Tooltip("Маскимально возможная координата игрока по x.")]
+    [SerializeField] private float max_x;
+    [Tooltip("Маскимально возможная координата игрока по y.")]
+    [SerializeField] private float max_y;
     private Camera cam;
 
     private void Start()
@@ -32,14 +36,14 @@ public class PlayerContraller : MonoBehaviour
             Vector3 mousePos = Input.mousePosition;
             point = cam.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, cam.nearClipPlane));
             Debug.Log("mousePos.x = " +  mousePos.x + ", my = " + transform.position.x + ", point.x = " + point.x);
-            if ( point.x > transform.position.x + 0.1f && transform.position.x < 2.5f)
+            if ( point.x > transform.position.x + 0.1f && transform.position.x < max_x)
                 transform.position = new Vector3(transform.position.x + speed * Time.deltaTime, transform.position.y, transform.position.z);
-            else if (point.x < transform.position.x - 0.1f && transform.position.x > -2.5f)
+            else if (point.x < transform.position.x - 0.1f && transform.position.x > -max_x)
                 transform.position = new Vector3(transform.position.x - speed * Time.deltaTime, transform.position.y, transform.position.z);
 
-            if (point.y > transform.position.y + 0.1f && transform.position.y < 4.3f)
+            if (point.y > transform.position.y + 0.1f && transform.position.y < max_y)
                 transform.position = new Vector3(transform.position.x, transform.position.y + speed * Time.deltaTime, transform.position.z);
-            else if (point.y < transform.position.y - 0.1f && transform.position.y > -4.3f)
+            else if (point.y < transform.position.y - 0.1f && transform.position.y > -max_y)
                 transform.position = new Vector3(transform.position.x, transform.position.y - speed * Time.deltaTime, transform.position.z);
         }
     }

@@ -5,39 +5,26 @@ using UnityEngine;
 public class ProjectileSpawner : MonoBehaviour
 {
     [SerializeField]
-    Rigidbody2D projectileObject;
-
-    [SerializeField]
-    float speed;
+    GameObject bulletPrefab;
 
     [SerializeField]
     float fireDelay = 0;
 
     float timeDelta = 0;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Update()
     {
-        
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        if (timeDelta >= fireDelay) {
-            Rigidbody2D projectileInstance = Instantiate(projectileObject, transform.position, Quaternion.identity);
-            projectileInstance.AddRelativeForce(Vector2.up * speed, ForceMode2D.Impulse);
+        timeDelta += Time.deltaTime;
+        if (timeDelta >= fireDelay)
+        {
+            Vector2 spawnPoint = new Vector2(transform.position.x, transform.position.y);
+            GameObject _bullet = Instantiate(bulletPrefab, spawnPoint, Quaternion.identity);
             timeDelta = 0;
         }
     }
 
-    private void Update()
-    {
-        timeDelta += Time.deltaTime;
-    }
-
     private void OnBecameInvisible()
     {
-        //Destroy(projectileObject);
+        Destroy(bulletPrefab);
     }
 }

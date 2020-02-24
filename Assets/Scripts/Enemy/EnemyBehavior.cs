@@ -5,9 +5,7 @@ using UnityEngine;
 public class EnemyBehavior : MonoBehaviour
 {
     [SerializeField]
-    private int maxHP;
-    [SerializeField]
-    private int currentHP;
+    private int HP;
     [SerializeField]
     private float pointOfNoReturn;
     [SerializeField]
@@ -24,6 +22,12 @@ public class EnemyBehavior : MonoBehaviour
         if (transform.position.y > pointOfNoReturn)
             transform.position = new Vector3(transform.position.x, transform.position.y - speed * Time.deltaTime, transform.position.z);
         else
+            Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (HP-- == 0)
             Destroy(gameObject);
     }
 }

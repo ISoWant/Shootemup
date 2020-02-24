@@ -6,23 +6,20 @@ using UnityEngine;
 public class Projectile : MonoBehaviour, IProjectile
 {
     [SerializeField]
-    int damage;
+    private int damage;
+    [SerializeField]
+    private int speed;
 
     public int getDamage()
     {
         return damage;
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
 
     // Update is called once per frame
     void Update()
     {
-        
+        transform.position = new Vector3(transform.position.x, transform.position.y + speed * Time.deltaTime, transform.position.z);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -16,47 +16,31 @@ public class PlayerContraller : MonoBehaviour
     [SerializeField] private int fireSpeed;
     private float max_x = 5.2f;
     private float max_y = 8.7f;
+    private float position_accuracy = 0.1f;
     private Camera cam;
 
     private void Start()
     {
         cam = Camera.main;
-        StartCoroutine(Fire());
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButton(0))
         {
             Vector3 point = new Vector3();
             Vector3 mousePos = Input.mousePosition;
+            float real_speed = speed * Time.deltaTime;
             point = cam.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, cam.nearClipPlane));
-            Debug.Log("mousePos.x = " +  mousePos.x + ", my = " + transform.position.x + ", point.x = " + point.x);
-            if ( point.x > transform.position.x + 0.1f && transform.position.x < max_x)
-                transform.position = new Vector3(transform.position.x + speed * Time.deltaTime, transform.position.y, transform.position.z);
-            else if (point.x < transform.position.x - 0.1f && transform.position.x > -max_x)
-                transform.position = new Vector3(transform.position.x - speed * Time.deltaTime, transform.position.y, transform.position.z);
+            if ( point.x > transform.position.x + position_accuracy && transform.position.x < max_x)
+                transform.position = new Vector3(transform.position.x + real_speed, transform.position.y, transform.position.z);
+            else if (point.x < transform.position.x - position_accuracy && transform.position.x > -max_x)
+                transform.position = new Vector3(transform.position.x - real_speed, transform.position.y, transform.position.z);
 
-            if (point.y > transform.position.y + 0.1f && transform.position.y < max_y)
-                transform.position = new Vector3(transform.position.x, transform.position.y + speed * Time.deltaTime, transform.position.z);
-            else if (point.y < transform.position.y - 0.1f && transform.position.y > -max_y)
-                transform.position = new Vector3(transform.position.x, transform.position.y - speed * Time.deltaTime, transform.position.z);
+            if (point.y > transform.position.y + position_accuracy && transform.position.y < max_y)
+                transform.position = new Vector3(transform.position.x, transform.position.y + real_speed, transform.position.z);
+            else if (point.y < transform.position.y - position_accuracy && transform.position.y > -max_y)
+                transform.position = new Vector3(transform.position.x, transform.position.y - real_speed, transform.position.z);
         }
     }
-
-    private void LaunchBulet()
-    {
-    }
-
-    private IEnumerator Fire()
-    {
-        while (GetComponent<Player>().IsAlive())
-        {
-            LaunchBulet();
-            yield return new WaitForSeconds(fireSpeed);
-        }
-    }
-
-
 }

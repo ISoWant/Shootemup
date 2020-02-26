@@ -227,7 +227,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 406508356}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.38, y: 0.19, z: 0}
+  m_LocalPosition: {x: 0.38, y: 0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 503215803}
@@ -247,8 +247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8584407864560923774, guid: 1a62bc762c7803243bce2b1775309b9a,
     type: 3}
-  speed: 10
-  fireDelay: 100
+  fireDelay: 0.2
 --- !u!1 &432527211
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,6 +348,7 @@ MonoBehaviour:
   - {fileID: 932881312}
   - {fileID: 170716716}
   - {fileID: 2059167865}
+  screenBounds: {x: 0, y: 0}
   choke: 0.1
 --- !u!1 &471155104
 GameObject:
@@ -563,7 +563,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 760882672}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.38, y: 0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 503215803}
@@ -583,8 +583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8584407864560923774, guid: 1a62bc762c7803243bce2b1775309b9a,
     type: 3}
-  speed: 10
-  fireDelay: 0.5
+  fireDelay: 0.2
 --- !u!1 &932881312
 GameObject:
   m_ObjectHideFlags: 0

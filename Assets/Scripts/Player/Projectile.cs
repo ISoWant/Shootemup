@@ -5,10 +5,8 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour, IProjectile
 {
-    [SerializeField]
-    private int damage;
-    [SerializeField]
-    private int speed;
+    [SerializeField] private int damage;
+    [SerializeField] private int speed;
 
     public int getDamage()
     {
@@ -22,7 +20,7 @@ public class Projectile : MonoBehaviour, IProjectile
         transform.position = new Vector3(transform.position.x, transform.position.y + speed * Time.deltaTime, transform.position.z);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         Destroy(gameObject);
     }

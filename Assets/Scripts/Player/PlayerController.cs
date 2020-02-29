@@ -4,13 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-[RequireComponent(typeof(Collider2D))]
-
-public class PlayerContraller : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [Header("Movement")]
     [Tooltip("Скорость движения самолёта.")]
     [SerializeField] private float speed = 1;
+    [SerializeField] private GameObject plane;
     private float max_x = 5.2f;
     private float max_y = 8.7f;
     private float position_accuracy = 0.1f;
@@ -23,7 +22,7 @@ public class PlayerContraller : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && plane != null)
         {
             Vector3 point = new Vector3();
             Vector3 mousePos = Input.mousePosition;

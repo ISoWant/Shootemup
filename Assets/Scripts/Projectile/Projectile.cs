@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour, IProjectile
+public class Projectile : MonoBehaviour
 {
     [SerializeField] private int damage;
     [SerializeField] private int speed;
@@ -13,8 +13,6 @@ public class Projectile : MonoBehaviour, IProjectile
         return damage;
     }
     
-
-    // Update is called once per frame
     void Update()
     {
         transform.position = new Vector3(transform.position.x, transform.position.y + speed * Time.deltaTime, transform.position.z);

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6610316255859024783}
   - component: {fileID: 3059021959159347977}
-  - component: {fileID: 878275060605772625}
+  - component: {fileID: 234459527883137155}
   m_Layer: 0
   m_Name: texture_2
   m_TagString: Untagged
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7456494182129551259}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.8588505, y: 61.152214, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &878275060605772625
+--- !u!114 &234459527883137155
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,7 +91,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7456494182129551259}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15fd096091887a6439ac454237d05fcf, type: 3}
+  m_Script: {fileID: 11500000, guid: e19781b177d30374bbcbb31ceec76e86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  maxX: 1.15
+  speed: 2

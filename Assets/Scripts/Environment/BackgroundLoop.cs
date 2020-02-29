@@ -15,7 +15,7 @@ public class BackgroundLoop : MonoBehaviour
             float y = obj.transform.position.y;
             if (y < -10 )
                 obj.transform.position = new Vector3(obj.transform.position.x, 15f, obj.transform.position.z);
-            obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y - speed, obj.transform.position.z);
+            obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y - speed * Time.deltaTime, obj.transform.position.z);
         }
     }
 }

@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBehavior : MonoBehaviour
+[RequireComponent(typeof(Collider2D))]
+
+public class PlaneBehavior : MonoBehaviour
 {
+    [SerializeField] private int maxHP = 20;
     [SerializeField] private int HP = 20;
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -13,8 +16,8 @@ public class EnemyBehavior : MonoBehaviour
             HP -= projectile.getDamage();
         else
         {
-            Player player = collision.GetComponent<Player>();
-            if (player != null)
+            PlaneBehavior planeBehavior = collision.GetComponent<PlaneBehavior>();
+            if (planeBehavior != null)
                 HP = 0;
         }
     }

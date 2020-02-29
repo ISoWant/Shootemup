@@ -10,10 +10,7 @@ public class PlayerContraller : MonoBehaviour
 {
     [Header("Movement")]
     [Tooltip("Скорость движения самолёта.")]
-    [SerializeField] private float speed;
-    [Header("Fire")]
-    [Tooltip("Скорость с которой выпускаются пули.")]
-    [SerializeField] private int fireSpeed;
+    [SerializeField] private float speed = 1;
     private float max_x = 5.2f;
     private float max_y = 8.7f;
     private float position_accuracy = 0.1f;

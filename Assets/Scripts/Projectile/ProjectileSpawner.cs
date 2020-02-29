@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class ProjectileSpawner : MonoBehaviour
 {
-    [SerializeField]
-    GameObject bulletPrefab;
+    [SerializeField] GameObject bulletPrefab;
 
     [SerializeField]
     float fireDelay = 0;

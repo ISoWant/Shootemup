@@ -4,16 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour, iShip
 {
-    [SerializeField]
-    private int maxHP;
-    [SerializeField]
-    private int currentHP;
-    [SerializeField]
-    private float Speed;
-    [SerializeField]
-    private int Power;
-    [SerializeField]
-    private Transform[] firePoints;
+    [SerializeField] private int maxHP = 10;
+    [SerializeField] private int currentHP = 10;
 
     public void TakeDamage( int damage )
     {
@@ -23,5 +15,10 @@ public class Player : MonoBehaviour, iShip
     public bool IsAlive()
     {
         return currentHP > 0;
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        Destroy(gameObject);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
@@ -7,23 +8,28 @@ using UnityEngine;
 public class PlaneBehavior : MonoBehaviour
 {
     [SerializeField] private int maxHP = 20;
-    [SerializeField] private int HP = 20;
+    [SerializeField] private Slider HPBar;
 
+    private void Start()
+    {
+        HPBar.maxValue = maxHP;
+        HPBar.value = maxHP;
+    }
     public void OnTriggerEnter2D(Collider2D collision)
     {
         Projectile projectile = collision.GetComponent<Projectile>();
         if (projectile != null)
-            HP -= projectile.getDamage();
+            HPBar.value -= projectile.getDamage();
         else
         {
             PlaneBehavior planeBehavior = collision.GetComponent<PlaneBehavior>();
             if (planeBehavior != null)
-                HP = 0;
+                HPBar.value = 0;
         }
     }
 
-    public int GetHP()
+    public float GetHP()
     {
-        return HP;
+        return HPBar.value;
     }
 }

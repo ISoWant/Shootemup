@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PlaneExplosion : MonoBehaviour
 {
     [SerializeField] private GameObject plane;
     [SerializeField] private GameObject explosion;
+    [SerializeField] private Canvas HPBar;
     private PlaneBehavior planeBehavior;
     private Animator explosionAnimator;
 
@@ -22,7 +24,10 @@ public class PlaneExplosion : MonoBehaviour
         if (planeBehavior.GetHP() <= 0)
         {
             if (!explosion.activeSelf)
+            {
+                Destroy(HPBar);
                 explosion.SetActive(true);
+            }
             if (explosionAnimator.GetBool("isDestroyed"))
                 Destroy(plane);
             if (explosionAnimator.GetBool("isCleared"))

@@ -7,7 +7,6 @@ public class PlaneExplosion : MonoBehaviour
 {
     [SerializeField] private GameObject plane;
     [SerializeField] private GameObject explosion;
-    [SerializeField] private Canvas HPBar;
     private PlaneBehavior planeBehavior;
     private Animator explosionAnimator;
 
@@ -25,7 +24,6 @@ public class PlaneExplosion : MonoBehaviour
         {
             if (!explosion.activeSelf)
             {
-                Destroy(HPBar);
                 explosion.SetActive(true);
             }
             if (explosionAnimator.GetBool("isDestroyed"))

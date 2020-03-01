@@ -7,38 +7,29 @@ using UnityEngine;
 
 public class PlaneBehavior : MonoBehaviour
 {
-    [SerializeField] private float maxHP = 20f;
-    private float HP;
+    [SerializeField] private int maxHP = 20;
+    [SerializeField] private Slider HPBar;
 
     private void Start()
     {
-        HP = maxHP;
+        HPBar.maxValue = maxHP;
+        HPBar.value = maxHP;
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
         Projectile projectile = collision.GetComponent<Projectile>();
         if (projectile != null)
-            HP -= projectile.getDamage();
+            HPBar.value -= projectile.getDamage();
         else
         {
             PlaneBehavior planeBehavior = collision.GetComponent<PlaneBehavior>();
             if (planeBehavior != null)
-                HP = 0;
+                HPBar.value = 0;
         }
     }
 
     public float GetHP()
     {
-        return HP;
-    }
-
-    public float GetRelativeHP()
-    {
-        return HP / maxHP;
-    }
-
-    private void OnBecameInvisible()
-    {
-        Destroy(gameObject);
+        return HPBar.value;
     }
 }

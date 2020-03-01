@@ -26,17 +26,17 @@ public class PlayerController : MonoBehaviour
         {
             Vector3 point = new Vector3();
             Vector3 mousePos = Input.mousePosition;
-            point = cam.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, cam.nearClipPlane));
             float real_speed = speed * Time.deltaTime;
+            point = cam.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, cam.nearClipPlane));
             if ( point.x > transform.position.x + position_accuracy && transform.position.x < max_x)
-                transform.position = new Vector3(Math.Max(transform.position.x + real_speed, point.x), transform.position.y, transform.position.z);
+                transform.position = new Vector3(transform.position.x + real_speed, transform.position.y, transform.position.z);
             else if (point.x < transform.position.x - position_accuracy && transform.position.x > -max_x)
-                transform.position = new Vector3(Math.Min(transform.position.x - real_speed, point.x), transform.position.y, transform.position.z);
+                transform.position = new Vector3(transform.position.x - real_speed, transform.position.y, transform.position.z);
 
             if (point.y > transform.position.y + position_accuracy && transform.position.y < max_y)
-                transform.position = new Vector3(transform.position.x, Math.Max(transform.position.y + real_speed, point.y), transform.position.z);
+                transform.position = new Vector3(transform.position.x, transform.position.y + real_speed, transform.position.z);
             else if (point.y < transform.position.y - position_accuracy && transform.position.y > -max_y)
-                transform.position = new Vector3(transform.position.x, Math.Min(transform.position.y - real_speed, point.y), transform.position.z);
+                transform.position = new Vector3(transform.position.x, transform.position.y - real_speed, transform.position.z);
         }
     }
 }

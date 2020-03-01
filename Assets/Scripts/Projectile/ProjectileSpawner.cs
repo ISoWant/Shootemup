@@ -4,19 +4,14 @@ using UnityEngine;
 
 public class ProjectileSpawner : MonoBehaviour
 {
-    [SerializeField] GameObject bulletPrefab;
-
-
-    [SerializeField]
-    float fireDelay = 0;
-
-    float timeDelta = 0;
-
-    bool isFiringBullet = true;
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private float fireDelay = 0;
+    private float timeDelta = 0;
+    private bool isFiringBullet = true;
 
     private void Update()
     {
-            bullet();
+        bullet();
     }
 
     public void bullet()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpecialProjectiles : MonoBehaviour
 {
-    float timeDelta = 0;
+    float timeDelta = 0f;
 
     [SerializeField] GameObject missilePrefab;
     
@@ -18,6 +18,12 @@ public class SpecialProjectiles : MonoBehaviour
         {
             fire();
         }
+        timeDelta += Time.deltaTime;
+        if (timeDelta >= release)
+        {
+            ableFire = true;
+            timeDelta = 0;
+        }
         Debug.Log(ableFire);
     }
 
@@ -27,20 +33,10 @@ public class SpecialProjectiles : MonoBehaviour
         {
                 Vector2 missileSpawnPoint = new Vector2(transform.position.x, transform.position.y);
                 GameObject _missile = Instantiate(missilePrefab, missileSpawnPoint, Quaternion.identity);
-            ableFire = false;
-            coolDown();
+            ableFire = false;   
         }
     }
 
-    private void coolDown()
-    {
-
-        timeDelta += Time.deltaTime;
-        if (timeDelta > release)
-        {
-            ableFire = true;
-        }
-    }
 
     private void OnBecameInvisible()
     {

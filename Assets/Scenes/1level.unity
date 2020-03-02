@@ -738,29 +738,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 3545970566671416790, guid: dc14ad59f2bf48347b48c8c6928ef06b,
+    - target: {fileID: 3545970565687499710, guid: dc14ad59f2bf48347b48c8c6928ef06b,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5114327697547537739, guid: dc14ad59f2bf48347b48c8c6928ef06b,
-        type: 3}
-      propertyPath: bulletPrefab
-      value: 
-      objectReference: {fileID: 8584407864560923774, guid: 1a62bc762c7803243bce2b1775309b9a,
-        type: 3}
-    - target: {fileID: 5114327698130129384, guid: dc14ad59f2bf48347b48c8c6928ef06b,
-        type: 3}
-      propertyPath: missilePrefab
-      value: 
-      objectReference: {fileID: 1057050223865186104, guid: 849fce06c25b1834a93b57a7724e911f,
-        type: 3}
-    - target: {fileID: 5114327698845214556, guid: dc14ad59f2bf48347b48c8c6928ef06b,
-        type: 3}
-      propertyPath: missilePrefab
-      value: 
-      objectReference: {fileID: 1057050223865186104, guid: 849fce06c25b1834a93b57a7724e911f,
-        type: 3}
     - target: {fileID: 5316157591427372309, guid: dc14ad59f2bf48347b48c8c6928ef06b,
         type: 3}
       propertyPath: m_AnchorMax.y

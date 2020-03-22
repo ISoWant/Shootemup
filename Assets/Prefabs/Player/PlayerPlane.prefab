@@ -45,8 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8584407864560923774, guid: 1a62bc762c7803243bce2b1775309b9a,
     type: 3}
-  missilePrefab: {fileID: 0}
-  fireDelay: 0.2
+  fireDelay: 0.5
+  direction: 1
 --- !u!1 &4277544364712321944
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,7 +145,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 20
-  HPBar: {fileID: 0}
 --- !u!1 &4277544364758156905
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,8 +190,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8584407864560923774, guid: 1a62bc762c7803243bce2b1775309b9a,
     type: 3}
-  missilePrefab: {fileID: 0}
-  fireDelay: 0.2
+  fireDelay: 0.5
+  direction: 1
 --- !u!1 &4277544365552651362
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,6 +236,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 0}
-  missilePrefab: {fileID: 1057050223865186104, guid: 849fce06c25b1834a93b57a7724e911f,
-    type: 3}
   fireDelay: 1
+  direction: 1

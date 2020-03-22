@@ -10,9 +10,8 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Скорость движения самолёта.")]
     [SerializeField] private float speed = 1;
     [SerializeField] private GameObject plane;
-    private float max_x = 5.2f;
-    private float max_y = 8.7f;
-    private float position_accuracy = 0.1f;
+    private float maxX = 5.2f;
+    private float maxY = 8.7f;
     private Camera cam;
 
     private void Start()
@@ -26,17 +25,20 @@ public class PlayerController : MonoBehaviour
         {
             Vector3 point = new Vector3();
             Vector3 mousePos = Input.mousePosition;
-            float real_speed = speed * Time.deltaTime;
+            float x = transform.position.x;
+            float y = transform.position.y;
             point = cam.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, cam.nearClipPlane));
-            if ( point.x > transform.position.x + position_accuracy && transform.position.x < max_x)
-                transform.position = new Vector3(transform.position.x + real_speed, transform.position.y, transform.position.z);
-            else if (point.x < transform.position.x - position_accuracy && transform.position.x > -max_x)
-                transform.position = new Vector3(transform.position.x - real_speed, transform.position.y, transform.position.z);
+            float real_speed = speed * Time.deltaTime;
+            if ( point.x > x)
+                x = Math.Min(Math.Min(x + real_speed, point.x), maxX);
+            else if (point.x < x)
+                x = Math.Max(Math.Max(x - real_speed, point.x), -maxX);
 
-            if (point.y > transform.position.y + position_accuracy && transform.position.y < max_y)
-                transform.position = new Vector3(transform.position.x, transform.position.y + real_speed, transform.position.z);
-            else if (point.y < transform.position.y - position_accuracy && transform.position.y > -max_y)
-                transform.position = new Vector3(transform.position.x, transform.position.y - real_speed, transform.position.z);
+            if (point.y > y)
+                y = Math.Min(Math.Min(y + real_speed, point.y), maxY);
+            else if (point.y < y)
+                y = Math.Max(Math.Max(y - real_speed, point.y), -maxY);
+            transform.position = new Vector3(x, y, transform.position.z);
         }
     }
 }

@@ -4,19 +4,16 @@ using UnityEngine;
 
 public class ProjectileSpawner : MonoBehaviour
 {
-    [SerializeField] GameObject bulletPrefab;
-
-
-    [SerializeField]
-    float fireDelay = 0;
-
-    float timeDelta = 0;
-
-    bool isFiringBullet = true;
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private float fireDelay = 0;
+    [Tooltip("Пуля летит вверх?")]
+    [SerializeField] private bool direction = true;
+    private float timeDelta = 0;
+    private bool isFiringBullet = true;
 
     private void Update()
     {
-            bullet();
+        bullet();
     }
 
     public void bullet()
@@ -26,6 +23,8 @@ public class ProjectileSpawner : MonoBehaviour
         {
             Vector2 bulletSpawnPoint = new Vector2(transform.position.x, transform.position.y);
             GameObject _bullet = Instantiate(bulletPrefab, bulletSpawnPoint, Quaternion.identity);
+            _bullet.GetComponent<Projectile>().SetDirection(direction);
+            _bullet.tag = gameObject.tag;
             timeDelta = 0;
         }
     }

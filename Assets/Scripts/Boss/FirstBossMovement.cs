@@ -11,12 +11,6 @@ public class FirstBossMovement : MonoBehaviour
     bool direction = true;
     private float next_pattern_time = 0;
     private int pattern = 0;
-    private Collider2D myCollider;
-
-    private void Start()
-    {
-        myCollider = gameObject.GetComponentInChildren<Collider2D>();
-    }
 
     void Update()
     {
@@ -38,7 +32,10 @@ public class FirstBossMovement : MonoBehaviour
         else
         {
             pattern = 1;
-            myCollider.enabled = true;
+            gameObject.GetComponentInChildren<Collider2D>().enabled = true;
+
+            foreach (ProjectileSpawner firePoint in gameObject.GetComponentsInChildren<ProjectileSpawner>())
+                firePoint.enabled = true;
         }
     }
 

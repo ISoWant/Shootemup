@@ -62,13 +62,35 @@ public class FirstBossBehavior : MonoBehaviour
         if (x.Equals(0))
             PatternComplition();
     }
-
+    
     private void PatternComplition()
     {
         next_pattern_time = Time.time + 5f;
         pattern = 2;
     }
+    
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        Projectile projectile = collision.GetComponent<Projectile>();
+        if (projectile != null)
+            HP -= projectile.getDamage();
+        else
+        {
+            FirstBossBehavior fbBehavior = collision.GetComponent<FirstBossBehavior>();
+            if (fbBehavior != null)
+                HP = 0;
+        }
+    }
 
+    public float GetHP()
+    {
+        return HP;
+    }
+
+    public float GetRelativeHP()
+    {
+        return HP / maxHP;
+    }
 
     private void OnBecameInvisible()
     {

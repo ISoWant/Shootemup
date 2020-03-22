@@ -396,9 +396,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 785923418537885552, guid: 061939626d2073f40b477e9b527c7022, type: 3}
-  boss: {fileID: 7031780305778860070, guid: 98e59f59f45636345a49382f11449778, type: 3}
+  boss: {fileID: 1225664158000787012, guid: 716043ca80cb4514a9abe7a2ec1d7f91, type: 3}
   spawnRate: 1
-  bossSpawnTime: 20
+  bossSpawnTime: 1
 --- !u!4 &471155106
 Transform:
   m_ObjectHideFlags: 0

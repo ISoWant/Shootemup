@@ -10,9 +10,8 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Скорость движения самолёта.")]
     [SerializeField] private float speed = 1;
     [SerializeField] private GameObject plane;
-    private float max_x = 5.2f;
-    private float max_y = 8.7f;
-    private float position_accuracy = 0.1f;
+    private float maxX = 5.2f;
+    private float maxY = 8.7f;
     private Camera cam;
 
     private void Start()
@@ -30,15 +29,15 @@ public class PlayerController : MonoBehaviour
             float y = transform.position.y;
             point = cam.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, cam.nearClipPlane));
             float real_speed = speed * Time.deltaTime;
-            if ( point.x > x + position_accuracy && x < max_x)
-                x = Math.Max(x + real_speed, point.x);
-            else if (point.x < x - position_accuracy && x > -max_x)
-                x = Math.Min(x - real_speed, point.x);
+            if ( point.x > x)
+                x = Math.Min(Math.Min(x + real_speed, point.x), maxX);
+            else if (point.x < x)
+                x = Math.Max(Math.Max(x - real_speed, point.x), -maxX);
 
-            if (point.y > y + position_accuracy && y < max_y)
-                y = Math.Max(y + real_speed, point.y);
-            else if (point.y < y - position_accuracy && y > -max_y)
-                y = Math.Min(y - real_speed, point.y);
+            if (point.y > y)
+                y = Math.Min(Math.Min(y + real_speed, point.y), maxY);
+            else if (point.y < y)
+                y = Math.Max(Math.Max(y - real_speed, point.y), -maxY);
             transform.position = new Vector3(x, y, transform.position.z);
         }
     }

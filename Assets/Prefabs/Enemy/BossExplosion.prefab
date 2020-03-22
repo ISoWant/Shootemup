@@ -47,7 +47,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  maxHP: 20
   maxX: 4.4
   minY: 8.75
 --- !u!114 &1225664158000787015
@@ -185,6 +184,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1225664158000787009}
     m_Modifications:
+    - target: {fileID: 7031780305375624336, guid: 98e59f59f45636345a49382f11449778,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.26
+      objectReference: {fileID: 0}
     - target: {fileID: 7031780305778860070, guid: 98e59f59f45636345a49382f11449778,
         type: 3}
       propertyPath: m_Name
@@ -244,6 +248,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031780306238946685, guid: 98e59f59f45636345a49382f11449778,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.8800007
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031780306865692056, guid: 98e59f59f45636345a49382f11449778,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.8800007
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98e59f59f45636345a49382f11449778, type: 3}

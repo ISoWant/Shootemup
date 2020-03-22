@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FirstBossBehavior : MonoBehaviour
+public class FirstBossMovement : MonoBehaviour
 {
     [SerializeField] private int speed = 1;
     [SerializeField] private float maxX = 4.4f;

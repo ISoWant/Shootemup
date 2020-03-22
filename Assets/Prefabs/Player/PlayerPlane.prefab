@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8584407864560923774, guid: 1a62bc762c7803243bce2b1775309b9a,
     type: 3}
-  fireDelay: 0.5
+  fireDelay: 0.7
   direction: 1
 --- !u!1 &4277544364712321944
 GameObject:
@@ -190,7 +190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8584407864560923774, guid: 1a62bc762c7803243bce2b1775309b9a,
     type: 3}
-  fireDelay: 0.5
+  fireDelay: 0.7
   direction: 1
 --- !u!1 &4277544365552651362
 GameObject:

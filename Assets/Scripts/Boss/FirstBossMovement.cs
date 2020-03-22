@@ -28,7 +28,7 @@ public class FirstBossMovement : MonoBehaviour
     private void Appearance()
     {
         if (transform.position.y > minY)
-            transform.position = new Vector3(transform.position.x, transform.position.y - speed * Time.deltaTime, transform.position.z);
+            transform.position = new Vector3(transform.position.x, transform.position.y - 0.55f * Time.deltaTime, transform.position.z);
         else
         {
             pattern = 1;

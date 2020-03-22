@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8584407864560923774, guid: 1a62bc762c7803243bce2b1775309b9a,
     type: 3}
-  fireDelay: 0.2
+  fireDelay: 0.4
   direction: 0
 --- !u!1 &7031780305778860070
 GameObject:
@@ -181,18 +181,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.642004}
+  m_Offset: {x: -0.012389183, y: -0.8030629}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 7.8, y: 2.99}
+    oldSize: {x: 9.15, y: 5.12}
     newSize: {x: 1.92, y: 1.92}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.8, y: 1.141592}
+  m_Size: {x: 8.667242, y: 2.4052858}
   m_EdgeRadius: 0
 --- !u!1 &7031780306238946684
 GameObject:
@@ -239,7 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8584407864560923774, guid: 1a62bc762c7803243bce2b1775309b9a,
     type: 3}
-  fireDelay: 0.2
+  fireDelay: 0.4
   direction: 0
 --- !u!1 &7031780306865692055
 GameObject:
@@ -286,5 +286,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8584407864560923774, guid: 1a62bc762c7803243bce2b1775309b9a,
     type: 3}
-  fireDelay: 0.2
+  fireDelay: 0.4
   direction: 0

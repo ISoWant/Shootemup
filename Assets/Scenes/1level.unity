@@ -397,7 +397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 785923418537885552, guid: 061939626d2073f40b477e9b527c7022, type: 3}
   boss: {fileID: 1225664158000787012, guid: 716043ca80cb4514a9abe7a2ec1d7f91, type: 3}
-  spawnRate: 1
+  spawnRate: 1.5
   bossSpawnTime: 30
 --- !u!4 &471155106
 Transform:
@@ -407,7 +407,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 471155104}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 11, z: 0}
+  m_LocalPosition: {x: 0, y: 12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -799,6 +799,56 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7331813753881808100, guid: dc14ad59f2bf48347b48c8c6928ef06b,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[21].x
+      value: 0.7904548
+      objectReference: {fileID: 0}
+    - target: {fileID: 7331813753881808100, guid: dc14ad59f2bf48347b48c8c6928ef06b,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[21].y
+      value: -0.72781813
+      objectReference: {fileID: 0}
+    - target: {fileID: 7331813753881808100, guid: dc14ad59f2bf48347b48c8c6928ef06b,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[19].x
+      value: 0.69896346
+      objectReference: {fileID: 0}
+    - target: {fileID: 7331813753881808100, guid: dc14ad59f2bf48347b48c8c6928ef06b,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[19].y
+      value: -0.8589637
+      objectReference: {fileID: 0}
+    - target: {fileID: 7331813753881808100, guid: dc14ad59f2bf48347b48c8c6928ef06b,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[20].x
+      value: 0.79149103
+      objectReference: {fileID: 0}
+    - target: {fileID: 7331813753881808100, guid: dc14ad59f2bf48347b48c8c6928ef06b,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[20].y
+      value: -0.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 7331813753881808100, guid: dc14ad59f2bf48347b48c8c6928ef06b,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[22].x
+      value: 0.87861836
+      objectReference: {fileID: 0}
+    - target: {fileID: 7331813753881808100, guid: dc14ad59f2bf48347b48c8c6928ef06b,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[22].y
+      value: -0.61069083
+      objectReference: {fileID: 0}
+    - target: {fileID: 7331813753881808100, guid: dc14ad59f2bf48347b48c8c6928ef06b,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[23].x
+      value: 0.8018365
+      objectReference: {fileID: 0}
+    - target: {fileID: 7331813753881808100, guid: dc14ad59f2bf48347b48c8c6928ef06b,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[23].y
+      value: -0.49034548
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5114327697547537739, guid: dc14ad59f2bf48347b48c8c6928ef06b, type: 3}

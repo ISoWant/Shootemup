@@ -24,7 +24,9 @@ public class Projectile : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
+        GameObject obstacle = collision.gameObject;
+        if (obstacle != null && gameObject.tag != obstacle.tag)
+            Destroy(gameObject);
     }
 
     private void OnBecameInvisible()

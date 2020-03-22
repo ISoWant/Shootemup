@@ -24,6 +24,7 @@ public class ProjectileSpawner : MonoBehaviour
             Vector2 bulletSpawnPoint = new Vector2(transform.position.x, transform.position.y);
             GameObject _bullet = Instantiate(bulletPrefab, bulletSpawnPoint, Quaternion.identity);
             _bullet.GetComponent<Projectile>().SetDirection(direction);
+            _bullet.tag = gameObject.tag;
             timeDelta = 0;
         }
     }

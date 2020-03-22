@@ -248,6 +248,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4277544363896254685, guid: fd1f9990ecae70f49a13e7f3ff7607bc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277544363896254685, guid: fd1f9990ecae70f49a13e7f3ff7607bc,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4277544364712321942, guid: fd1f9990ecae70f49a13e7f3ff7607bc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -313,10 +323,20 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4277544364758156905, guid: fd1f9990ecae70f49a13e7f3ff7607bc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4277544365552651362, guid: fd1f9990ecae70f49a13e7f3ff7607bc,
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277544365552651362, guid: fd1f9990ecae70f49a13e7f3ff7607bc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd1f9990ecae70f49a13e7f3ff7607bc, type: 3}

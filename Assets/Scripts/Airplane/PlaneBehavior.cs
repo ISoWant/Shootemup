@@ -17,7 +17,7 @@ public class PlaneBehavior : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
         Projectile projectile = collision.GetComponent<Projectile>();
-        if (projectile != null)
+        if (projectile != null && projectile.tag != gameObject.tag)
             HP -= projectile.getDamage();
         else
         {

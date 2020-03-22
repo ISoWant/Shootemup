@@ -6,18 +6,11 @@ using UnityEngine;
 public class FirstBossBehavior : MonoBehaviour
 {
     [SerializeField] private int speed = 1;
-    [SerializeField] private float maxHP = 20f;
     [SerializeField] private float maxX = 4.4f;
     [SerializeField] private float minY = 8.75f;
-    private float HP;
     bool direction = true;
     private float next_pattern_time = 0;
     private int pattern = 0;
-
-    private void Start()
-    {
-        HP = maxHP;
-    }
 
     void Update()
     {
@@ -67,33 +60,5 @@ public class FirstBossBehavior : MonoBehaviour
     {
         next_pattern_time = Time.time + 5f;
         pattern = 2;
-    }
-    
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        Projectile projectile = collision.GetComponent<Projectile>();
-        if (projectile != null)
-            HP -= projectile.getDamage();
-        else
-        {
-            FirstBossBehavior fbBehavior = collision.GetComponent<FirstBossBehavior>();
-            if (fbBehavior != null)
-                HP = 0;
-        }
-    }
-
-    public float GetHP()
-    {
-        return HP;
-    }
-
-    public float GetRelativeHP()
-    {
-        return HP / maxHP;
-    }
-
-    private void OnBecameInvisible()
-    {
-        Destroy(gameObject);
     }
 }

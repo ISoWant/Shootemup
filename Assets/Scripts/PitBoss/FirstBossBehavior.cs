@@ -37,6 +37,29 @@ public class FirstBossBehavior : MonoBehaviour
         transform.position = new Vector3(x, y, transform.position.z);
     }
 
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        Projectile projectile = collision.GetComponent<Projectile>();
+        if (projectile != null)
+            HP -= projectile.getDamage();
+        else
+        {
+            FirstBossBehavior fbBehavior = collision.GetComponent<FirstBossBehavior>();
+            if (fbBehavior != null)
+                HP = 0;
+        }
+    }
+
+    public float GetHP()
+    {
+        return HP;
+    }
+
+    public float GetRelativeHP()
+    {
+        return HP / maxHP;
+    }
+
     private void OnBecameInvisible()
     {
         Destroy(gameObject);
